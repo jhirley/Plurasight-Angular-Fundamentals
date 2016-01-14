@@ -38,12 +38,12 @@ gulp.task('inject', function () {
         .pipe(gulp.dest('./src/views'));
 });
 
-gulp.task('nodemon', ['style', 'inject'], function () {
+gulp.task('nodemon', ['style'], function () {
     var options = {
-        script: 'server.js',
+        script: 'scripts/web-server.js',
         delayTime: 1,
         env: {
-            'PORT': 3030,
+            'PORT': 5000,
             'NODE_ENV': 'development'
         },
         watch: jsFiles

@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
-<body>
+<body ng-cloak>
 	<div class="container">
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -19,9 +19,19 @@
 			<img ng-src="{{event.imageUrl}}" alt="{{event.name}}"></img>
 			<div class="row">
 				<div class="spann11">
-					<h2>{{event.name}}</h2>
+					<h2 ng-class="myclass" ng-bind-template="{{event.name}} {{event.date}}"></h2>
 				</div>	
 			</div>
+
+			<button class="btn" ng-disabled="buttonDisabled">Disabled</button>
+
+			<div>{{1 + 2}}</div>
+			<div ng-non-bindable>{{1 + 2}}</div>
+
+			<div ng-bind-html-unsafe = "snippet">Some Title</div>
+			<div ng-bind-html = "snippet">Some Title</div>
+			<h2 ng-show="boolValue">Show This</h2>
+			<h2 ng-hide="boolValue">hide This</h2>
 			<div class="row">
 				<div class="span3">
 					<div><strong>Date:</strong> {{event.date}}</div>
@@ -73,6 +83,7 @@
 	<script type="text/javascript" src= "/lib/underscore-1.4.4.min.js"></script>
 	<script type="text/javascript" src= "/lib/bootstrap.min.js"></script>
 	<script type="text/javascript" src= "/lib/angular/angular.js"></script>
+		<script type="text/javascript" src= "/lib/angular/angular-sanitize.js"></script>
 	<script type="text/javascript" src= "/js/app.js"></script>
 	<script type="text/javascript" src= "/js/controllers/EventController.js"></script>
 </body>

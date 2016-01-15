@@ -2,6 +2,17 @@
 'use strict';
 
 eventsApp.controller('EventController', function EventController($scope) {
+
+	$scope.boolValue = true;
+
+	$scope.mystyle = {color:'red'};
+
+	$scope.myclass = "blue";
+
+	$scope.buttonDisabled = true;
+
+	$scope.snippet = '<span	style="color:red">Hi There</span>';
+
 	$scope.event = {
 		name: 'Angular Boot Camp',
 		date: '1/1/2016',

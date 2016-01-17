@@ -11,7 +11,11 @@ eventsApp.controller('EventController', function EventController($scope) {
 
 	$scope.buttonDisabled = true;
 
+	$scope.amount = 42;
+
 	$scope.snippet = '<span	style="color:red">Hi There</span>';
+
+	$scope.sortorder = 'name';
 
 	$scope.event = {
 		name: 'Angular Boot Camp',
@@ -27,24 +31,24 @@ eventsApp.controller('EventController', function EventController($scope) {
 			{
 				name: 'Drectives Masterclass'
 				,creatorName: 'Bob Smith'
-				,durration: '1 hr'
-				,level: 'Advanced'
+				,durration: 1
+				,level: 'advanced'
 				,abstract: 'In this sesssion you will learn the ins and outs of directives'
 				,upVoteCount: 3
 			},
 			{
 				name: 'Scopes for fun and profit'
 				,creatorName: 'John Doe'
-				,durration: '1 hr'
-				,level: 'Intro'
+				,durration: 2
+				,level: 'introductory'
 				,abstract: 'In this sesssion you will learn the ins and outs of Scopes'
 				,upVoteCount: 5
 			},
 			{
 				name: 'Well behaved controllers'
 				,creatorName: 'Bob Doe'
-				,durration: '1 hr'
-				,level: 'Advanced'
+				,durration: 4
+				,level: 'intermediate'
 				,abstract: 'In this sesssion you will learn the ins and outs of controllers'
 				,upVoteCount: 12
 			}

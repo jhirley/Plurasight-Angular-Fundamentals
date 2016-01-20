@@ -50,7 +50,7 @@ gulp.task('nodemon', ['style'], function () {
     };
     return nodemon(options)
         .on('restart', ['style'], function (ev) {
-            console.log('Restarting .....');
+            console.log('Restarting Gulp..\nPort:' + options.env.PORT + '\nNODE_ENV :' + options.env.NODE_ENV);
             console.log('File changed on restart:\n' + ev);
         })
         .on('start', function (ev) {console.log('Starting .....');})

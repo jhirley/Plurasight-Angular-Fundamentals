@@ -29,6 +29,12 @@
 						<input id="eventName" required type="text" ng-model="event.name" placeholder="Name of your event." />
 						<label for="eventDate">Event Date:</label>
 						<input id="eventDate" required ng-pattern="/\d\d/\d\d/\d\d\d\d/" type="text" ng-model="event.date" placeholder="Format MM/DD/YYYY" />
+
+						<label for="eventEmail">Event Email:</label>
+						<input id="eventEmail" required ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' type="text" ng-model="event.Email" placeholder="your@emailaddress.com" />
+<!-- /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ -->
+<!-- /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ -->
+
 						<label for="eventTime">Event Time:</label>
 						<input id="eventTime" type="text" ng-model="event.time" placeholder="Start Time" />
 						<label for="eventLocation">Event Location:</label>

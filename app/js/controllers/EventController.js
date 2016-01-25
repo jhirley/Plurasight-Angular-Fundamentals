@@ -1,7 +1,7 @@
 //EventController.js
 'use strict';
 
-eventsApp.controller('EventController', function EventController($scope, eventData, $log) {
+eventsApp.controller('EventController', function EventController($scope, eventData) {
 
 	$scope.boolValue = true;
 
@@ -17,11 +17,9 @@ eventsApp.controller('EventController', function EventController($scope, eventDa
 
 	$scope.sortorder = 'name';
 
-	eventData.getEvent()
-		.success(function (event){$scope.event = event; })
-		.error(function (data, status, headers, config) {
-			$log.warn(data, status, headers(), config);
-		});
+	eventData.getEvent().$promise
+		.then(function (event) { $scope.event = event; console.log(event);})
+		.catch( function (response) {console.log(response);});
 
 	$scope.upVoteSession = function (session) {
 		session.upVoteCount++;

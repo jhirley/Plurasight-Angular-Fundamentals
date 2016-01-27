@@ -17,6 +17,7 @@
 		</div>
 		<div ng-controller="EventController" style="padding-left: 20px; padding-right: 20px">
 			<img ng-src="{{event.imageUrl}}" alt="{{event.name}}"></img>
+			<button type="button" class="btn btn-primary" ng-click="scrollToSession()">Scroll</button>
 			<div class="row">
 				<div class="spann11">
 					<!-- <h2 ng-class="myclass" ng-bind-template="{{event.name}} {{event.date}}"></h2> -->
@@ -73,7 +74,7 @@
 				<option selected value="advanced">Advanced</option>
 			</select>
 			<ul class="thumbnails">
-				<li ng-repeat="session in event.sessions | filter : query| orderBy:sortorder | limitTo: 2 ">
+				<li ng-repeat="session in event.sessions | filter : query| orderBy:sortorder | limitTo: 2 " class="span11" id="session{{session.id}}">
 					
 					<div class="row session">
 						<div class="span0 well votingWidget">

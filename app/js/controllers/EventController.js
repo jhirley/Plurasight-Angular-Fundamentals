@@ -1,7 +1,7 @@
 //EventController.js
 'use strict';
 
-eventsApp.controller('EventController', function EventController($scope, eventData) {
+eventsApp.controller('EventController', function EventController($scope, eventData, $anchorScroll) {
 
 	$scope.boolValue = true;
 
@@ -29,4 +29,8 @@ eventsApp.controller('EventController', function EventController($scope, eventDa
 	$scope.downVoteSession = function (session) {
 		session.upVoteCount--;
 	};
+
+	$scope.scrollToSession = function () {
+		$anchorScroll();
+	}
 });

@@ -8,8 +8,41 @@ module.exports.get = function(req, res) {
 	res.send(event);
 };
 
+
+
 module.exports.save = function(req, res) {
 	var event = req.body;
 	fs.writeFileSync('app/data/event/' + req.params.id + '.json', JSON.stringify(event));
 	res.send(event);
+};
+
+module.exports.getAll = function(req, res) {
+	// var event = fs.readFileSync('app/data/event/' + req.params.id + '.json', 'utf8');
+	var path = 'app/data/event/';
+
+	var files = [];
+
+	try {
+		files = fs.readdirSync(path);
+	}
+	catch (e) {
+		res.send('[]');
+		console.log(e);
+		res.end();
+	}
+	var results = "[";
+	
+	for (var idx = 0; idx < files.length; idx++) {
+		if(files[idx].indexOf(".json") == files[idx].length - 5) {
+			results += fs.readFileSync(path + "/" + files[idx]) + ",";
+		}
+	}
+
+	results = results.substr(0, results.length - 1);
+	results +="]";
+
+	// res.setHeader('Content-Type', 'application/json');
+	// console.log('no error yet.');
+	res.send(results);
+	res.end();
 };

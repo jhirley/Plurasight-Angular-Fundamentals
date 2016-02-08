@@ -5,13 +5,14 @@
 	<title>Index.html</title>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<base href="/">
 </head>
 <body ng-cloak>
 	<div class="container">
-		<div class="navbar">
+		<div class="navbar" ng-controller="MainMenuController">
 			<div class="navbar-inner">
 				<ul class="nav">
-				<li><a href="#/newEvent">Create Event</a></li>
+				<li><a href="#" ng-click="createEvent()">Create Event</a></li>
 				</ul>
 			</div>
 			
@@ -36,6 +37,7 @@
 	<script type="text/javascript" src= "/js/controllers/EventController.js"></script>
 	<script type="text/javascript" src= "/js/controllers/EditEventController.js"></script>
 	<script type="text/javascript" src= "/js/controllers/EventListController.js"></script>
+	<script type="text/javascript" src= "/js/controllers/MainMenuController.js"></script>
 	<script type="text/javascript" src= "/js/services/EventData.js"></script>
 	<script type="text/javascript" src= "/js/filters.js"></script>
 </body>

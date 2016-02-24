@@ -41,7 +41,7 @@ module.exports.getAll = function(req, res) {
 	results = results.substr(0, results.length - 1);
 	results +="]";
 
-	// res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Content-Type', 'application/json');
 	// console.log('no error yet.');
 	res.send(results);
 	res.end();

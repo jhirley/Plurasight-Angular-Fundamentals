@@ -1,7 +1,7 @@
 //EventController.js
 'use strict';
 
-eventsApp.controller('EventController', function EventController($scope, eventData, $routeParams) {
+eventsApp.controller('EventController', function EventController($scope, eventData, $routeParams, $route) {
 
 	// $scope.boolValue = true;
 
@@ -33,5 +33,8 @@ eventsApp.controller('EventController', function EventController($scope, eventDa
 
 	$scope.scrollToSession = function () {
 		$anchorScroll();
-	}
+	};
+	$scope.reload = function() {
+		$route.reload();
+	};
 });

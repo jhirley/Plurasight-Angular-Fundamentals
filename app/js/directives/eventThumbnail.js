@@ -4,7 +4,11 @@
 eventsApp.directive('eventThumbnail', function() {
 	return {
 		restrict: 'E',
-		replace: true,
-		templateUrl: '/templates/directives/eventThumbnail.html'
+		replace: true,  //jf replaces diretive with templateUrl instead of appending
+		templateUrl: '/templates/directives/eventThumbnail.html',
+		scope: {
+			event: "="
+		//	event: "=event" //jf &, @, =
+		}
 	};
 });

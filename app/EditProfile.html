@@ -11,7 +11,8 @@
     <form name="profileForm">
         <div class="row-fluid">
             <div class="span3">
-                <img ng-src="{{getGravatarUrl(user.emailAddress)}}"/>
+                <gravatar email="{{user.emailAddress}}"/>
+                <!-- <img ng-src="{{getGravatarUrl(user.emailAddress)}}"/> -->
             </div>
             <div class="span3">
                 <fieldset>
@@ -48,6 +49,8 @@
 
 <script src="/lib/jquery.min.js"></script>
 <script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular/angular-resource.min.js"></script>
+<script src="/lib/angular/angular-route.min.js"></script>
 <script src="/lib/underscore-1.4.4.min.js"></script>
 <script type="text/javascript" src= "/lib/angular/angular-sanitize.js"></script>
 <script type="text/javascript" src= "/lib/angular/angular-sanitize.js"></script>
@@ -61,6 +64,7 @@
 <script src="/js/controllers/EditProfileController.js"></script>
 
 <script src="/lib/bootstrap.min.js"></script>
+<script type="text/javascript" src= "/js/directives/gravatar.js"></script>
 
 </body>
 </html>

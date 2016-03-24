@@ -3,10 +3,12 @@
 eventsApp
 	.directive('greeting', function() {
 		return {
-			priority: 1,
+			// priority: 1,
+			replace: true,
 			restrict: 'E',
+			transclude: true,
 			replace: true,  //jf replaces diretive with templateUrl instead of appending
-			template: "<button class='btn' ng-click='sayHello()'>Say Hello</button>",
+			template: "<div><button class='btn' ng-click='sayHello()'>Say Hello</button><div ng-transclude></div></div>", //jf ng-transclude only works on a div 
 			controller: 'GreetingController'
 			// controller: '@',
 			// name: 'ctrl'
@@ -14,20 +16,21 @@ eventsApp
 	})
 	.directive('finnish', function(){
 		return{
-			priority: 2,
+			// priority: 3,
 			restrict: 'A',
-			require: 'greeting',
-			link: function(scope, element, attrs, controller) {
+			require: '^greeting',  //jf ^ <- look up in the DOM at parent directives
+ 			link: function(scope, element, attrs, controller) {
 				controller.addGreeting('hei');
 			}
 		}
 	})
 	.directive('hindi', function(){
 		return{
-			priority: 1,
-			terminal: true, //no directives with a lower prority will execute
+			// priority: 2,
+			// terminal: true, 
+			//no directives with a lower prority will execute
 			restrict: 'A',
-			require: 'greeting',
+			require: '^greeting',  //jf ^ <- look up in the DOM at parent directives
 			link: function(scope, element, attrs, controller) {
 				controller.addGreeting('namashdi');
 			}

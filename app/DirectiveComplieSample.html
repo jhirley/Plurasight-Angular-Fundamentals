@@ -7,10 +7,8 @@
 </head>
 <body>
 
-<!-- <greeting ctrl="GreetingController" finnish hindi /> -->
-<greeting> 
-    <div finnish hindi> </div>
-</greeting>
+<div>Text to repeat:<input type="text" ng-model="text"></input></div>
+<div repeat-x="5" text='{{text}}'>{{text}}</div>
 
 <script src="/lib/jquery.min.js"></script>
 <script src="/lib/angular/angular.js"></script>
@@ -24,7 +22,7 @@
 <script type="text/javascript" src= "/js/filters.js"></script>
 
 <script src="/lib/bootstrap.min.js"></script>
-<script type="text/javascript" src= "/js/directives/greeting.js"></script>
+<script type="text/javascript" src= "/js/directives/repeatx.js"></script>
 
 </body>
 </html>

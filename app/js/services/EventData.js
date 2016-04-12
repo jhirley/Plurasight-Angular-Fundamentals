@@ -1,5 +1,5 @@
 // EventData.js
-
+'use strict';
 eventsApp.factory('eventData', function ($resource) {
 
 	var resource = $resource( '/data/event/:id', {id:'@id'});

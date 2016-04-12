@@ -1,3 +1,5 @@
+'use struct';
+
 eventsApp.controller('TimeoutSampleController', 
 	function TimeoutSampleController($scope, $interval) {
 		$scope.name = 0;

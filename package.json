@@ -21,8 +21,13 @@
     "gulp-jscs": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.4",
-    "jshint": "^2.9.1-rc1",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "karma-ng-html2js-preprocessor": "^0.2.1",
     "wiredep": "^2.2.2"
   }
 }
